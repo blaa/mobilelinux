@@ -9,7 +9,7 @@ container on an Android device.
   transparent.
 
 Project consists of:
-* host/linux_create.sh - creates a Debian image file on the Linux
+* host/mlinux_create.sh - creates a Debian image file on the Linux
   desktop machine.
 * android/* - scripts automating starting/stopping the container
   (mounts, startup script) and running a command inside the container.
@@ -26,12 +26,15 @@ couldn't easily alter the Linux Deploy app.
 
 License: GNU GPLv3
 Author: 2016, Tomasz bla Fortuna
+Version: 0.2
 
 Worthy alternatives
 --------------------
 
 This one might particularly be better for you, I didn't know about it
-when I started:
+when I started. They are trying to be transparent about what are they
+doing which is great. Still I couldn't compile their code so gave up
+analysis.
 * https://github.com/guardianproject/lildebi/wiki
 
 Other + howtos:
@@ -78,3 +81,7 @@ Troubleshooting
 Second stage of debootstrap on the device needs to be left alone while
 it works and device requires a reboot afterwards. I should probably
 NOT bind /dev - rather copy required files.
+
+If using droidwall add manual entry to allow output from container
+user (1000 is default UID for first user). You can manage firewall
+using an app or container, but not both.

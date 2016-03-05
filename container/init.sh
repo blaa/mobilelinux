@@ -1,6 +1,12 @@
 #!/bin/bash
 
+# Optional:
+# hostname nameyoursystem
+
+# Start at least ssh:
 /etc/init.d/ssh start
 
-# This seems to cause some problems (pretty WEIRD too).
-#/etc/init.d/rsyslog start
+# After configuring init.d (see postconfigure.sh) you can use:
+# /etc/init.d/rc 2
+
+
