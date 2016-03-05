@@ -26,7 +26,7 @@ couldn't easily alter the Linux Deploy app.
 
 License: GNU GPLv3
 Author: 2016, Tomasz bla Fortuna
-Version: 0.2
+Version: 0.3
 
 Worthy alternatives
 --------------------

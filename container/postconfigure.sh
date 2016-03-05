@@ -32,9 +32,11 @@ adduser $NEWUSER
 # Create android related groups
 addgroup --gid 1028 sdcard_rw
 addgroup --gid 1005 and_audio
+addgroup --gid 3003 and_inet
 
 adduser $NEWUSER sdcard_rw
 adduser $NEWUSER and_audio
+adduser $NEWUSER and_inet
 
 cleanup_rc () {
     # Command used to start everything automatically:
@@ -71,7 +73,7 @@ apt-get install -y ipython ipython3 python-gevent python-virtualenv python3-virt
 apt-get install -y python-pymongo python-scapy python-twisted
 
 # Network tools / analysis
-apt-get install -y nmap tcpdump mtr ifstat aircrack-ng telnet netcat tinc tor
+apt-get install -y nmap tcpdump mtr ifstat aircrack-ng telnet netcat tinc tor bind9-host
 
 # Radio analysis - this pulls a lot of packages
 apt-get install -y rtl-sdr gqrx-sdr 

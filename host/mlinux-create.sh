@@ -121,6 +121,7 @@ function config () {
 
     if [ ! -f $MNTPNT/etc/hosts ] || ! grep -q '^127.0.0.1' $MNTPNT/etc/hosts; then
         echo '127.0.0.1    localhost ipv4-localhost localhost.localdomain' >> $MNTPNT/etc/hosts
+        chmod a+r $MNTPNT/etc/hosts
     fi
 }
 
