@@ -30,11 +30,16 @@ cp /usr/share/zoneinfo/Europe/Warsaw localtime
 adduser $NEWUSER
 
 # Create android related groups
-addgroup --gid 1028 sdcard_rw
+addgroup --gid 1015 sdcard_rw
+addgroup --gid 1028 sdcard_r
 addgroup --gid 1005 and_audio
 addgroup --gid 3003 and_inet
+addgroup --gid 3002 and_net_bt
+addgroup --gid 1007 and_log
+addgroup --gid 3001 and_net_bt_admin
 
 adduser $NEWUSER sdcard_rw
+adduser $NEWUSER sdcard_r
 adduser $NEWUSER and_audio
 adduser $NEWUSER and_inet
 
@@ -59,11 +64,12 @@ cleanup_rc
 # Rest of packages
 apt-get install -y atop htop sysstat strace
 apt-get install -y iputils-ping net-tools iproute2 iptables links
-apt-get install -y zsh bzip2 less rsync unzip vim zile pwgen apg rdiff-backup bc debsums unison
+apt-get install -y man file zsh bzip2 less rsync unzip vim zile pwgen apg rdiff-backup bc debsums unison
 apt-get install -y usbutils kmod
-apt-get install -y screen tmux terminology 
+apt-get install -y screen tmux terminology gettext
 apt-get install -y nethack-console 
 apt-get install -y sshfs encfs mosh autossh
+apt-get install -y alsa-tools alsa-utils
 
 # X stuff
 apt-get install -y xpra tightvncserver rxvt-unicode
@@ -76,7 +82,7 @@ apt-get install -y python-pymongo python-scapy python-twisted
 apt-get install -y nmap tcpdump mtr ifstat aircrack-ng telnet netcat tinc tor bind9-host
 
 # Radio analysis - this pulls a lot of packages
-apt-get install -y rtl-sdr gqrx-sdr 
+#apt-get install -y rtl-sdr gqrx-sdr 
 
 # Emacs stuff.
 apt-get install -y emacs emacs-goodies-el magit slime pymacs scala-mode-el python-mode
